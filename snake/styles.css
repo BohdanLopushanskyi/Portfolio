@@ -1,0 +1,135 @@
+:root{
+  --bg:#0b0f1a;
+  --panel: rgba(255,255,255,0.04);
+  --accent: #27e08a;
+  --danger: #ff6b6b;
+  --muted: rgba(255,255,255,0.6);
+  --glass: rgba(255,255,255,0.06);
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Inter, system-ui, Arial, sans-serif;
+  background:linear-gradient(180deg,#021026 0%, var(--bg) 60%);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.wrap{
+  width:min(920px,95vw);
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:18px;
+  padding:18px;
+}
+
+@media(max-width:900px){
+  .wrap{grid-template-columns:1fr;}
+}
+
+.gameCard{
+  background:var(--panel);
+  backdrop-filter: blur(6px);
+  border-radius:12px;
+  padding:14px;
+  box-shadow:0 6px 30px rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+canvas{
+  display:block;
+  background:linear-gradient(180deg,#041229 0%, #071427 100%);
+  border-radius:8px;
+  box-shadow:inset 0 0 60px rgba(255,255,255,0.02);
+}
+
+.hud{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.info{display:flex; gap:10px; flex-wrap:wrap;}
+
+.pill{
+  background:var(--glass);
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:600;
+  color:var(--muted);
+}
+
+.controls button{
+  padding:8px 12px;
+}
+
+button{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+button.primary{
+  background:linear-gradient(90deg,var(--accent),#1dbb6c);
+  border:none;
+  color:#022;
+}
+
+.rightPanel{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.panel{
+  background:var(--panel);
+  padding:12px;
+  border-radius:10px;
+}
+
+h3{margin:0 0 8px 0; color:var(--muted);}
+
+.small{font-size:13px; color:var(--muted);}
+
+.gridPreview{
+  width:100%;
+  height:160px;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  color:var(--muted);
+}
+
+footer{
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+  margin-top:10px;
+}
+
+.touchControls{
+  display:none;
+  gap:8px;
+  text-align:center;
+}
+
+.touchControls button{
+  width:56px;
+  height:56px;
+  font-size:20px;
+  border-radius:10px;
+}
+
+@media(max-width:720px){
+  .touchControls{display:flex;}
+  canvas{height:min(72vh,420px); width:100%;}
+}

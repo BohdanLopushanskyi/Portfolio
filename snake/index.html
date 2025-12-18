@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Snake — HTML5 Game</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="gameCard">
+      <div class="hud">
+        <div class="info">
+          <div class="pill">Score: <span id="score">0</span></div>
+          <div class="pill">High: <span id="high">0</span></div>
+          <div class="pill small">Speed: <span id="speedLabel">8</span> SPS</div>
+        </div>
+        <div class="controls">
+          <button id="btnPause">Pause (P)</button>
+          <button id="btnRestart" class="primary">Restart (R)</button>
+        </div>
+      </div>
+
+      <canvas id="game" width="600" height="600"></canvas>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="small" id="status">Use arrow keys or WASD to move.</div>
+        <div class="small">Made with ❤️ — single-file</div>
+      </div>
+
+      <div class="touchControls" id="touchControls">
+        <div><button data-dir="up">▲</button></div>
+        <div>
+          <button data-dir="left">◀</button>
+          <button data-dir="down">▼</button>
+          <button data-dir="right">▶</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="rightPanel">
+      <div class="panel">
+        <h3>How to play</h3>
+        <div class="small">Eat apples to grow. Don’t hit yourself. Pause with (P).</div>
+      </div>
+
+      <div class="panel">
+        <h3>Settings</h3>
+        <div class="settingsRow">
+          <label class="small">Grid:</label>
+          <select id="gridSize">
+            <option value="16">16</option>
+            <option value="20" selected>20</option>
+            <option value="24">24</option>
+            <option value="30">30</option>
+          </select>
+
+          <label class="small">Speed (SPS)</label>
+          <input id="speed" type="range" min="4" max="18" value="8" />
+        </div>
+
+        <div class="settingsRow">
+          <button id="toggleWrap">Toggle Wrap: <span id="wrapLabel">ON</span></button>
+          <button id="saveHigh">Save High</button>
+        </div>
+      </div>
+
+      <div class="panel gridPreview" id="preview">
+        <div>Preview: play and try it out!</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Tip: try changing the grid and speed to tune difficulty.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
