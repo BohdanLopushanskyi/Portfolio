@@ -42,7 +42,7 @@ transform: scale(1.05);
 
 
 .section {
-padding: 60px;
+padding: 80px;
 max-width: 900px;
 margin: auto;
 animation: fadeIn 0.8s ease-in-out;
@@ -93,4 +93,5 @@ color: #fff;
 margin-top: 40px;
 font-size: 14px;
 letter-spacing: 1px;
+
 }
